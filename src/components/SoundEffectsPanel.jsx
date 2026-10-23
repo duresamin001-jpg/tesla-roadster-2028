@@ -33,6 +33,10 @@ export default function SoundEffectsPanel({ soundData }) {
     audioService.playThrusterSound();
   };
 
+  const handlePlayLaunchSequence = () => {
+    audioService.playLaunchIntroSound();
+  };
+
   const handleStop = () => {
     audioService.stopAll();
   };
@@ -73,10 +77,22 @@ export default function SoundEffectsPanel({ soundData }) {
       </div>
 
       {/* Main Sound Action Buttons */}
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-5">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-5">
+        <button
+          onClick={handlePlayLaunchSequence}
+          className={`col-span-2 sm:col-span-1 px-3 py-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
+            activeTrack === 'launch_intro'
+              ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white ring-2 ring-orange-300'
+              : 'bg-slate-900 hover:bg-slate-800 text-[#00E5FF] border border-blue-400/40 shadow-inner'
+          }`}
+        >
+          <Rocket className="w-4 h-4 text-orange-400 animate-pulse" />
+          <span>{lang === 'ar' ? 'انطلاق شامل' : 'Full Launch'}</span>
+        </button>
+
         <button
           onClick={handlePlayMotor}
-          className={`px-4 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
+          className={`px-3 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
             activeTrack === 'motor'
               ? 'bg-[#007BFF] text-white ring-2 ring-[#00BFFF]'
               : 'bg-white hover:bg-blue-50 text-[#14213D] border border-[#E5E7EB]'
@@ -88,7 +104,7 @@ export default function SoundEffectsPanel({ soundData }) {
 
         <button
           onClick={handlePlayAcceleration}
-          className={`px-4 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
+          className={`px-3 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
             activeTrack === 'acceleration'
               ? 'bg-[#007BFF] text-white ring-2 ring-[#00BFFF]'
               : 'bg-white hover:bg-blue-50 text-[#14213D] border border-[#E5E7EB]'
@@ -100,7 +116,7 @@ export default function SoundEffectsPanel({ soundData }) {
 
         <button
           onClick={handlePlayThruster}
-          className={`px-4 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
+          className={`px-3 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm ${
             activeTrack === 'thruster'
               ? 'bg-[#007BFF] text-white ring-2 ring-[#00BFFF]'
               : 'bg-white hover:bg-blue-50 text-[#14213D] border border-[#E5E7EB]'
@@ -113,7 +129,7 @@ export default function SoundEffectsPanel({ soundData }) {
         <button
           onClick={handleStop}
           disabled={!activeTrack}
-          className="px-4 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 transition disabled:opacity-40 disabled:pointer-events-none"
+          className="col-span-2 sm:col-span-1 px-3 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 transition disabled:opacity-40 disabled:pointer-events-none"
         >
           <Square className="w-4 h-4 fill-current" />
           <span>{t('home.stopSound')}</span>

@@ -12,12 +12,18 @@ import BatteryCalculator from './components/BatteryCalculator';
 import RegionalPricing from './components/RegionalPricing';
 import Specifications from './components/Specifications';
 import FaqSection from './components/FaqSection';
+import LaunchSplash from './components/LaunchSplash';
+import { resolveAsset } from './utils/assetHelper';
 
 export default function App() {
   const { t, lang, toggleLanguage, isRTL } = useLanguage();
 
   const [activeTab, setActiveTab] = useState(() => {
     return localStorage.getItem('roadster_active_tab') || 'home';
+  });
+
+  const [showLaunchSplash, setShowLaunchSplash] = useState(() => {
+    return !sessionStorage.getItem('roadster_launched');
   });
 
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -92,7 +98,7 @@ export default function App() {
             className="flex items-center gap-3 cursor-pointer group"
           >
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-slate-200/80 transform group-hover:scale-105 transition shrink-0 bg-slate-900">
-              <img src="/apple-touch-icon.png" alt="Roadster Icon" className="w-full h-full object-cover" />
+              <img src={resolveAsset('/apple-touch-icon.png')} alt="Roadster Icon" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="text-base sm:text-lg font-black tracking-tight text-[#14213D] leading-tight">
@@ -126,8 +132,17 @@ export default function App() {
             })}
           </nav>
 
-          {/* Language Toggle & Install Button */}
+          {/* Moving Action with Sound Button, Language Toggle & Install Button */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowLaunchSplash(true)}
+              className="px-2.5 sm:px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-[#00E5FF] border border-[#007BFF]/40 rounded-xl text-xs font-black flex items-center gap-1.5 transition shadow-xs cursor-pointer"
+              title="Play Moving Launch Action with Sound"
+            >
+              <Rocket className="w-3.5 h-3.5 text-orange-400 animate-pulse" />
+              <span className="hidden sm:inline">{lang === 'ar' ? 'انطلاق وحركة' : 'Launch Action'}</span>
+            </button>
+
             {isInstallable && (
               <button
                 onClick={handleInstallClick}
@@ -135,7 +150,7 @@ export default function App() {
                 title="Install App on Device"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span>{lang === 'ar' ? 'تثبيت التطبيق' : 'Install App'}</span>
+                <span className="hidden xs:inline">{lang === 'ar' ? 'تثبيت' : 'Install'}</span>
               </button>
             )}
 
@@ -361,6 +376,16 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* Moving Action with Sound Launch Splash */}
+      {showLaunchSplash && (
+        <LaunchSplash 
+          onComplete={() => {
+            setShowLaunchSplash(false);
+            sessionStorage.setItem('roadster_launched', 'true');
+          }}
+        />
+      )}
     </div>
   );
 }
