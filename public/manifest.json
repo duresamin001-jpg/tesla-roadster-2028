@@ -1,0 +1,29 @@
+{
+  "name": "Tesla Roadster 2028: The Future Flying Car",
+  "short_name": "Roadster 2028",
+  "description": "Premium interactive automotive app featuring 3D Explorer, Paint Studio, Battery Calculator, and Regional Pricing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#007BFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/app-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

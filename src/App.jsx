@@ -57,8 +57,8 @@ export default function App() {
             onClick={() => setActiveTab('home')}
             className="flex items-center gap-3 cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#007BFF] to-[#00BFFF] text-white flex items-center justify-center shadow-md transform group-hover:scale-105 transition">
-              <Rocket className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-slate-200/80 transform group-hover:scale-105 transition shrink-0 bg-slate-900">
+              <img src="/apple-touch-icon.png" alt="Roadster Icon" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="text-base sm:text-lg font-black tracking-tight text-[#14213D] leading-tight">
