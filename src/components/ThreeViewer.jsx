@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { audioService } from '../utils/audioSynth';
 import { useLanguage } from '../utils/LanguageContext';
+import { resolveAsset } from '../utils/assetHelper';
 
 // Procedural Thruster Particle Component
 function ThrusterParticles({ active }) {
@@ -208,7 +209,8 @@ export default function ThreeViewer({ viewerData, selectedColor, onSelectColor }
   const { t, isRTL, lang } = useLanguage();
   const containerRef = useRef(null);
 
-  const [modelUrl, setModelUrl] = useState(viewerData?.modelAsset?.path || "/assets/roadster-model.glb");
+  const initialModel = resolveAsset(viewerData?.modelAsset?.path || "/assets/roadster-model.glb");
+  const [modelUrl, setModelUrl] = useState(initialModel);
   const [activePreset, setActivePreset] = useState("default");
   const [lightingMode, setLightingMode] = useState("studio"); // 'studio', 'cyber', 'sunset'
   const [autoRotate, setAutoRotate] = useState(false);

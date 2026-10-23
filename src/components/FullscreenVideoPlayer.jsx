@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Maximize, Minimize, Play, Pause, RotateCcw, Volume2, VolumeX, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
+import { resolveAsset } from '../utils/assetHelper';
 
 export default function FullscreenVideoPlayer({ videoData }) {
   const { t, isRTL } = useLanguage();
@@ -161,8 +162,8 @@ export default function FullscreenVideoPlayer({ videoData }) {
           <>
             <video
               ref={videoRef}
-              src={videoData?.assetPath || "/assets/roadster-launch-video.mp4"}
-              poster={videoData?.fallbackPoster || "/assets/roadster-flying-stage.jpg"}
+              src={resolveAsset(videoData?.assetPath || "/assets/roadster-launch-video.mp4")}
+              poster={resolveAsset(videoData?.fallbackPoster || "/assets/roadster-flying-stage.jpg")}
               playsInline
               muted={isMuted}
               onTimeUpdate={handleTimeUpdate}

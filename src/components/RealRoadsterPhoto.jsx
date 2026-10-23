@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { ZoomIn, X, ExternalLink, ShieldCheck, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
+import { resolveAsset } from '../utils/assetHelper';
 
 export default function RealRoadsterPhoto({ photoData }) {
   const { t, lang, isRTL } = useLanguage();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState(photoData?.highResAssetPath || photoData?.assetPath || "/assets/Tesla_roadster_Complete_Front.jpg");
+  const initialPhoto = resolveAsset(photoData?.highResAssetPath || photoData?.assetPath || "/assets/Tesla_roadster_Complete_Front.jpg");
+  const [selectedPhoto, setSelectedPhoto] = useState(initialPhoto);
   const [imgError, setImgError] = useState(false);
 
   const caption = lang === 'ar' ? (photoData?.caption_ar || photoData?.caption) : photoData?.caption;
@@ -53,11 +55,11 @@ export default function RealRoadsterPhoto({ photoData }) {
                 key={item.id}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedPhoto(item.path);
+                  setSelectedPhoto(resolveAsset(item.path));
                   setImgError(false);
                 }}
                 className={`text-xs px-2.5 py-1 rounded-md transition font-medium shrink-0 flex items-center gap-1.5 ${
-                  selectedPhoto === item.path
+                  selectedPhoto === resolveAsset(item.path)
                     ? 'bg-[#007BFF] text-white shadow-sm'
                     : 'bg-white text-[#14213D] border border-[#E5E7EB] hover:bg-blue-50'
                 }`}
