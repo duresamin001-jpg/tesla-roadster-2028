@@ -8,9 +8,11 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#007BFF" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Roadster 2028" />
+    <meta name="application-name" content="Tesla Roadster 2028" />
     <meta name="description" content="Tesla Roadster 2028: The Future Flying Car - Interactive Automotive App with 3D Explorer, Paint Studio, Battery Calculator, and Regional Pricing." />
     
     <title>Tesla Roadster 2028: The Future Flying Car</title>
@@ -22,5 +24,14 @@
   <body class="bg-white text-[#14213D] antialiased selection:bg-[#007BFF] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(function(err) {
+            console.log('SW registration note:', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>

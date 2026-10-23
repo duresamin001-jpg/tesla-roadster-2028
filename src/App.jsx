@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Home, Box, Palette, BatteryCharging, DollarSign, Sliders, HelpCircle, 
-  Languages, Sparkles, ShieldAlert, Rocket 
+  Languages, Sparkles, ShieldAlert, Rocket, Download, X, Smartphone, Monitor
 } from 'lucide-react';
 import roadsterData from './data/roadsterData.json';
 import { useLanguage } from './utils/LanguageContext';
@@ -19,6 +19,40 @@ export default function App() {
   const [activeTab, setActiveTab] = useState(() => {
     return localStorage.getItem('roadster_active_tab') || 'home';
   });
+
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isInstallable, setIsInstallable] = useState(true);
+  const [showInstallGuide, setShowInstallGuide] = useState(false);
+
+  useEffect(() => {
+    const handleBeforeInstall = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setIsInstallable(true);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstall);
+
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    if (isStandalone) {
+      setIsInstallable(false);
+    }
+
+    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        setIsInstallable(false);
+      }
+      setDeferredPrompt(null);
+    } else {
+      setShowInstallGuide(true);
+    }
+  };
 
   const [selectedColor, setSelectedColor] = useState(
     roadsterData?.viewer?.colourPresets?.[1] || { 
@@ -92,8 +126,19 @@ export default function App() {
             })}
           </nav>
 
-          {/* Language Toggle & Status Badges */}
+          {/* Language Toggle & Install Button */}
           <div className="flex items-center gap-2">
+            {isInstallable && (
+              <button
+                onClick={handleInstallClick}
+                className="px-3 py-1.5 bg-[#007BFF] hover:bg-blue-600 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition shadow-sm"
+                title="Install App on Device"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>{lang === 'ar' ? 'تثبيت التطبيق' : 'Install App'}</span>
+              </button>
+            )}
+
             <button
               onClick={toggleLanguage}
               className="px-3 py-1.5 bg-[#F0F7FF] hover:bg-blue-100 text-[#007BFF] border border-blue-200 rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition shadow-xs"
@@ -105,6 +150,92 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {/* Install Guide Modal for Mobile & Laptop */}
+      {showInstallGuide && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setShowInstallGuide(false)}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 text-[#14213D] space-y-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl overflow-hidden bg-slate-900 shrink-0">
+                  <img src="/apple-touch-icon.png" alt="App Icon" className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-base">
+                    {lang === 'ar' ? 'تثبيت تطبيق تيسلا رودستر' : 'Install Tesla Roadster App'}
+                  </h3>
+                  <span className="text-xs text-[#007BFF] font-semibold">
+                    {lang === 'ar' ? 'على هاتفك أو حاسوبك المحمول' : 'On Your Laptop or Any Mobile'}
+                  </span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowInstallGuide(false)}
+                className="p-1 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-700"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs leading-relaxed">
+              <div className="p-3 bg-[#F0F7FF] rounded-xl border border-blue-100 flex items-start gap-3">
+                <Smartphone className="w-5 h-5 text-[#007BFF] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-[#14213D] mb-0.5">
+                    {lang === 'ar' ? 'على هواتف آيفون (Safari):' : 'On iPhone / iPad (Safari):'}
+                  </strong>
+                  <span>
+                    {lang === 'ar' 
+                      ? 'اضغط على زر المشاركة (Share ⎋) أسفل المتصفح، ثم اختر "إضافة إلى الشاشة الرئيسية" (Add to Home Screen).' 
+                      : 'Tap the Share button (⎋) at the bottom, then choose "Add to Home Screen".'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-[#F0F7FF] rounded-xl border border-blue-100 flex items-start gap-3">
+                <Smartphone className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-[#14213D] mb-0.5">
+                    {lang === 'ar' ? 'على هواتف أندرويد (Chrome):' : 'On Android Phones (Chrome):'}
+                  </strong>
+                  <span>
+                    {lang === 'ar' 
+                      ? 'اضغط على القائمة ذات النقاط الثلاث (⋮) أعلى اليمين، ثم اختر "تثبيت التطبيق" أو "إضافة إلى الشاشة الرئيسية".' 
+                      : 'Tap the three-dots menu (⋮) in the top-right corner, then tap "Install App" or "Add to Home Screen".'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-[#F8FAFC] rounded-xl border border-slate-200 flex items-start gap-3">
+                <Monitor className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-[#14213D] mb-0.5">
+                    {lang === 'ar' ? 'على الحاسوب المحمول (Chrome أو Edge):' : 'On Laptop / PC (Chrome or Edge):'}
+                  </strong>
+                  <span>
+                    {lang === 'ar' 
+                      ? 'اضغط على أيقونة التثبيت (⊕) داخل شريط العنوان أعلى المتصفح لتشغيله كتطبيق ويندوز مستقل.' 
+                      : 'Click the Install icon (⊕) inside your browser address bar (top right) to run it as a desktop app.'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setShowInstallGuide(false)}
+              className="w-full py-2.5 bg-[#007BFF] hover:bg-blue-600 text-white font-bold text-xs rounded-xl shadow transition"
+            >
+              {lang === 'ar' ? 'فهمت ذلك' : 'Got It'}
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Viewport */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 mb-16 lg:mb-6">
