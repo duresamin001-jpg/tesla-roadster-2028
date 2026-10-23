@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #007BFF;
+  --color-text: #14213D;
+  --color-card: #F0F7FF;
+  --color-accent: #00BFFF;
+  --color-border: #E5E7EB;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #14213D;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-arabic {
+  font-family: 'Cairo', 'Noto Sans Arabic', Tahoma, sans-serif;
+}
+
+/* Custom scrollbars for app elegance */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #007BFF;
+}
+
+/* Sparkle animation for Diamond Pink paint effect */
+@keyframes sparkleShimmer {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15) rotate(180deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkleShimmer 2.2s infinite ease-in-out;
+}
+
+/* Thruster flame pulse */
+@keyframes thrusterGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.6), 0 0 35px rgba(255, 120, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.95), 0 0 65px rgba(255, 140, 0, 0.7);
+  }
+}
+
+.thruster-active {
+  animation: thrusterGlow 0.4s infinite alternate;
+}

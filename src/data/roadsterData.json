@@ -1,0 +1,512 @@
+{
+  "appMetadata": {
+    "title": "Tesla Roadster 2028: The Future Flying Car",
+    "version": "1.0.0",
+    "disclaimer": "Concept details may change. This is a fan-made informational app, not official Tesla.",
+    "thrusterDisclaimer": "SIMULATED THRUSTER EFFECT — NOT PROOF OF FLIGHT CAPABILITY.",
+    "paintDisclaimer": "Paint colours are app customizer previews and are not confirmation of official Tesla factory colour options.",
+    "pricingDisclaimer": "Final purchase price not announced. Reservation amounts and third-party estimates are distinct from total vehicle price.",
+    "calculatorDisclaimer": "This calculator provides rough mathematical estimates based on selected assumptions, not guaranteed real-world range or performance.",
+    "lastUpdated": "2026-10-23"
+  },
+  "homepage": {
+    "video": {
+      "assetPath": "/assets/roadster-launch-video.mp4",
+      "fallbackPoster": "/assets/roadster-flying-stage.jpg",
+      "title": "Tesla Roadster Concept Launch & Demonstration",
+      "source": "Tesla Roadster Official Unveil Event & Concept Reel",
+      "licensingNotes": "Demonstration media asset supplied with project for illustrative app interface playback",
+      "verified": true,
+      "lastVerified": "2026-10-23"
+    },
+    "roadsterPhoto": {
+      "assetPath": "/assets/roadster-flying-photo.jpg",
+      "highResAssetPath": "/assets/Tesla_roadster_Complete_Front.jpg",
+      "alternativePhotos": [
+        {
+          "id": "real-front",
+          "title": "Tesla Roadster Concept Studio Front View",
+          "path": "/assets/Tesla_roadster_Complete_Front.jpg",
+          "status": "official_concept_photo",
+          "verified": true,
+          "source": "Tesla Official Press Archive"
+        },
+        {
+          "id": "real-rear",
+          "title": "Tesla Roadster Concept Studio Rear View",
+          "path": "/assets/Tesla_roadster_Complete_rear.jpg",
+          "status": "official_concept_photo",
+          "verified": true,
+          "source": "Tesla Official Press Archive"
+        },
+        {
+          "id": "flying-concept",
+          "title": "Tesla Roadster Thruster Concept Illustration",
+          "path": "/assets/roadster-thruster-rear.jpg",
+          "status": "simulated_concept_render",
+          "verified": false,
+          "source": "Concept Thruster Visualization Reference"
+        }
+      ],
+      "caption": "Tesla Roadster concept — explore the vehicle and its experimental thruster concept.",
+      "caption_ar": "نموذج تيسلا رودستر الاختباري — استكشف المركبة ومفهوم الدفع الصاروخي التجريبي.",
+      "description": "High-resolution real Tesla Roadster prototype vehicle concept photograph highlighting aerodynamic lines and exterior finish.",
+      "description_ar": "صورة عالية الدقة لنموذج تيسلا رودستر التجريبي توضح الخطوط الانسيابية الديناميكية والهيكل الخارجي.",
+      "sourceUrl": "https://www.tesla.com/roadster",
+      "licensingNotes": "Official Tesla media and press materials for concept demonstration.",
+      "verified": true,
+      "lastVerified": "2026-10-23"
+    },
+    "soundEffects": {
+      "motorSound": {
+        "id": "motor",
+        "title": "Electric Dual-Motor Whine",
+        "title_ar": "صوت المحرك الكهربائي المزدوج",
+        "type": "synthetic_illustrative",
+        "label": "Illustrative Synthetic Sound (Web Audio Synthesizer) — Not an authentic Tesla recording.",
+        "label_ar": "صوت توضيحي تركيبي (مُخلّق صوتي ويب) — ليس تسجيلاً رسمياً من تيسلا.",
+        "frequency": 240,
+        "harmonicRatio": 1.5
+      },
+      "accelerationSound": {
+        "id": "acceleration",
+        "title": "High-Torque Acceleration Surge",
+        "title_ar": "صوت تسارع العزم الفائق",
+        "type": "synthetic_illustrative",
+        "label": "Illustrative Synthetic Acceleration Ramp — Not proof of vehicle performance.",
+        "label_ar": "محاكاة صوتية لتسارع المركبة — لا تمثل تسجيلاً رسمياً.",
+        "frequency": 180,
+        "rampTo": 620
+      },
+      "thrusterSound": {
+        "id": "thruster",
+        "title": "SpaceX Cold-Gas Thruster Pulse",
+        "title_ar": "صوت نبض الدفع الصاروخي (سبيس إكس)",
+        "type": "synthetic_illustrative",
+        "label": "SIMULATED THRUSTER EFFECT — NOT PROOF OF FLIGHT CAPABILITY.",
+        "label_ar": "تأثير دفع صاروخي محاكى — ليس دليلاً على القدرة الفعلية على الطيران.",
+        "noiseType": "filtered_compressed_gas"
+      }
+    },
+    "productionStatus": {
+      "targetDate": null,
+      "statusMessage": "Official production timeline unconfirmed by Tesla. Elon Musk mentioned targeted late 2024 to 2025/2026 milestones, but formal production dates remain unannounced.",
+      "statusMessage_ar": "الجدول الزمني الرسمي للإنتاج غير مؤكد حتى الآن من تيسلا. ذكر إيلون ماسك أهدافاً مبدئية ولكن لم يتم الإعلان عن تاريخ تسليم نهائي.",
+      "isVerifiedTarget": false,
+      "source": "Tesla Shareholder Meetings & CEO Public Statements",
+      "sourceUrl": "https://ir.tesla.com",
+      "lastVerified": "2026-10-23"
+    }
+  },
+  "viewer": {
+    "modelAsset": {
+      "path": "/assets/roadster-model.glb",
+      "title": "Tesla Roadster 2.0 3D Model",
+      "author": "Michael (gmmichaelonearth)",
+      "sourceUrl": "https://sketchfab.com/3d-models/tesla-roadster-20-will-be-enchanced-soon-8d5da3904e434fc3830edf558cb9014d",
+      "license": "CC-BY-4.0",
+      "format": "GLB / GLTF 2.0 PBR",
+      "verified": true
+    },
+    "cameraPresets": [
+      { "id": "default", "name": "Front Three-Quarter", "name_ar": "زاوية أمامية ثلاثية الأبعاد", "position": [3.6, 1.4, 3.8], "target": [0, 0.4, 0] },
+      { "id": "front", "name": "Front", "name_ar": "منظر أمامي", "position": [0, 1.0, 4.6], "target": [0, 0.4, 0] },
+      { "id": "rear", "name": "Rear", "name_ar": "منظر خلفي", "position": [0, 1.2, -4.6], "target": [0, 0.4, 0] },
+      { "id": "side_left", "name": "Left Side", "name_ar": "الجانب الأيسر", "position": [-4.6, 1.1, 0], "target": [0, 0.4, 0] },
+      { "id": "side_right", "name": "Right Side", "name_ar": "الجانب الأيمن", "position": [4.6, 1.1, 0], "target": [0, 0.4, 0] },
+      { "id": "top", "name": "Top View", "name_ar": "منظر علوي", "position": [0, 5.2, 0.1], "target": [0, 0.3, 0] },
+      { "id": "cockpit", "name": "Cockpit / Interior", "name_ar": "المقصورة الداخلية", "position": [0.4, 0.9, 0.1], "target": [0.2, 0.8, 0.5] }
+    ],
+    "lightingPresets": [
+      {
+        "id": "studio",
+        "name": "Studio Softbox",
+        "name_ar": "استوديو احترافي",
+        "background": "#0B0F19",
+        "ambientIntensity": 0.8,
+        "keyLight": "#FFFFFF",
+        "accentLight": "#00BFFF",
+        "groundColor": "#0F172A"
+      },
+      {
+        "id": "cyber",
+        "name": "Cyber Neon",
+        "name_ar": "سايبر نيون",
+        "background": "#050711",
+        "ambientIntensity": 0.5,
+        "keyLight": "#00E5FF",
+        "accentLight": "#FF007F",
+        "groundColor": "#08061A"
+      },
+      {
+        "id": "sunset",
+        "name": "Sunset Glow",
+        "name_ar": "غروب الشمس",
+        "background": "#1A0F1A",
+        "ambientIntensity": 0.9,
+        "keyLight": "#FFA726",
+        "accentLight": "#AB47BC",
+        "groundColor": "#1F1218"
+      }
+    ],
+    "animationCapabilities": {
+      "doorsSupported": false,
+      "doorsNote": "Door geometry in the supplied 3D model is merged into the monocoque chassis without independent hinge pivots. Illustrative gullwing hover/chassis open preview provided with disclosure.",
+      "wheelsSupported": true,
+      "thrusterSupported": true
+    },
+    "colourPresets": [
+      { "id": "pearl_white", "name": "Pearl White", "name_ar": "أبيض لؤلؤي", "hex": "#F4F6F9", "roughness": 0.18, "metalness": 0.3, "clearcoat": 1.0 },
+      { "id": "gloss_red", "name": "Gloss Red", "name_ar": "أحمر لامع", "hex": "#B30006", "roughness": 0.15, "metalness": 0.45, "clearcoat": 1.0 },
+      { "id": "hot_pink", "name": "Hot Pink", "name_ar": "وردي ساطع", "hex": "#E60067", "roughness": 0.16, "metalness": 0.4, "clearcoat": 0.95 },
+      { "id": "diamond_pink", "name": "Diamond Pink", "name_ar": "وردي ماسي متلألئ", "hex": "#FF599C", "roughness": 0.22, "metalness": 0.75, "clearcoat": 1.0, "sparkle": true },
+      { "id": "gloss_black", "name": "Gloss Black", "name_ar": "أسود لامع", "hex": "#0D0E11", "roughness": 0.2, "metalness": 0.6, "clearcoat": 0.9 },
+      { "id": "shiny_black", "name": "Shiny Black", "name_ar": "أسود براق فاخر", "hex": "#050507", "roughness": 0.08, "metalness": 0.85, "clearcoat": 1.0 },
+      { "id": "metallic_grey", "name": "Metallic Grey", "name_ar": "رمادي ميتاليك", "hex": "#4A525D", "roughness": 0.25, "metalness": 0.8, "clearcoat": 0.9 },
+      { "id": "silver", "name": "Silver", "name_ar": "فضي نقي", "hex": "#D1D5DB", "roughness": 0.2, "metalness": 0.9, "clearcoat": 0.95 },
+      { "id": "electric_blue", "name": "Electric Blue", "name_ar": "أزرق كهربائي", "hex": "#007BFF", "roughness": 0.15, "metalness": 0.7, "clearcoat": 1.0 }
+    ],
+    "paintEffects": {
+      "diamondPinkSparkle": {
+        "description": "Premium metallic flake pigment effect adhering directly to vehicle body surface clearcoat.",
+        "intensity": 0.85,
+        "color": "#FFEBF4"
+      }
+    }
+  },
+  "battery": {
+    "officialSpecifications": {
+      "batteryCapacity": { "value": null, "unit": "kWh", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "Concept estimate was ~200 kWh; Tesla has not released production pack specifications." },
+      "batteryLifespan": { "value": null, "unit": "years / km", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "No official pack longevity claim published for production Roadster." },
+      "batteryWarranty": { "value": null, "unit": "years / miles", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "Standard Tesla high-end models offer 8 years / 150,000 miles, but Roadster terms remain unannounced." },
+      "chargingPower": { "value": null, "unit": "kW", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "Expected compatibility with Supercharger V4 (350+ kW), unconfirmed." },
+      "chargingTime": { "value": null, "unit": "minutes", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "No official 10-80% charge curve released." },
+      "energyConsumption": { "value": null, "unit": "Wh/km", "status": "Not announced", "status_ar": "لم يُعلن رسمياً", "notes": "Aerodynamic efficiency ratings not yet EPA certified." },
+      "publishedRange": { "value": "620 mi / 1,000 km", "unit": "miles / km", "status": "Concept Target (2017 Claim)", "status_ar": "هدف النموذج الاختباري (إعلان 2017)", "notes": "Stated during 2017 reveal event; official production EPA range pending testing." }
+    },
+    "userAssumptions": {
+      "defaultFullChargeRangeKm": 1000,
+      "defaultFullChargeRangeMiles": 620,
+      "defaultAverageSpeedKmh": 100,
+      "defaultAverageSpeedMph": 62,
+      "defaultStartBattery": 100,
+      "defaultRemainingBattery": 80
+    },
+    "drivingTimeCalculator": {
+      "algorithm": "remaining_distance = full_range * (remaining_battery / 100); driving_time = remaining_distance / average_speed",
+      "factors": [
+        { "name": "Ambient Temperature", "impact": "High heat or sub-zero cold increases thermal regulation energy draw." },
+        { "name": "Driving Habits", "impact": "Rapid acceleration and sustained high speeds significantly lower efficiency." },
+        { "name": "Aerodynamic Drag", "impact": "Air resistance rises quadratically with vehicle velocity." },
+        { "name": "Battery Health & Age", "impact": "Lithium-ion cells experience gradual capacity fade over multi-year cycles." }
+      ]
+    }
+  },
+  "regionalPricing": {
+    "officialSourceUrls": {
+      "us": "https://www.tesla.com/roadster",
+      "uae": "https://www.tesla.com/en_ae/roadster",
+      "saudiArabia": "https://www.tesla.com/en_sa/roadster",
+      "termsApi": "https://www.tesla.com/configurator/api/v4/terms?locale=en_US&model=mt&saleType=PreSale"
+    },
+    "us": {
+      "country": "United States",
+      "country_ar": "الولايات المتحدة الأمريكية",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "finalPurchasePrice": {
+        "status": "Final purchase price not announced.",
+        "status_ar": "لم يتم الإعلان عن سعر الشراء النهائي.",
+        "amount": null,
+        "isVerified": false,
+        "historicalReference": "Originally estimated at $200,000 base / $250,000 Founders Series in 2017; removed from Tesla website in late 2021."
+      },
+      "reservationDeposit": {
+        "amount": 50000,
+        "details": "$5,000 credit card deposit today + $45,000 wire transfer due within 10 days.",
+        "details_ar": "دفعة أولى بقيمة 5,000 دولار بالبطاقة + 45,000 دولار تحويل بنكي خلال 10 أيام.",
+        "isVerified": true,
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      "estimatedExtraCosts": {
+        "title": "US Destination, Sales Tax & Registration",
+        "title_ar": "رسوم النقل والضرائب والتسجيل بالولايات المتحدة",
+        "estimatedTaxRate": 0.08,
+        "destinationFee": 1400,
+        "registrationEstimate": 600
+      }
+    },
+    "uae": {
+      "country": "United Arab Emirates",
+      "country_ar": "الإمارات العربية المتحدة",
+      "currency": "AED",
+      "currencySymbol": "د.إ",
+      "finalPurchasePrice": {
+        "status": "Final purchase price not announced.",
+        "status_ar": "لم يتم الإعلان عن سعر الشراء النهائي.",
+        "amount": null,
+        "isVerified": false,
+        "historicalReference": "Tesla UAE regional website lists reservation deposit only; total retail MSRP pending release."
+      },
+      "reservationDeposit": {
+        "amount": 183000,
+        "details": "AED 18,300 card payment + AED 164,700 wire transfer due within 10 days.",
+        "details_ar": "18,300 د.إ بالبطاقة الائتمانية + 164,700 د.إ تحويل بنكي خلال 10 أيام.",
+        "isVerified": true,
+        "sourceUrl": "https://www.tesla.com/en_ae/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      "estimatedExtraCosts": {
+        "title": "UAE VAT, Shipping & Local Registration",
+        "title_ar": "ضريبة القيمة المضافة والشحن والتسجيل بالإمارات",
+        "vatRate": 0.05,
+        "customsDuty": 0.05,
+        "shippingEstimateAED": 12000,
+        "registrationAED": 1500
+      }
+    },
+    "saudiArabia": {
+      "country": "Kingdom of Saudi Arabia",
+      "country_ar": "المملكة العربية السعودية",
+      "currency": "SAR",
+      "currencySymbol": "ر.س",
+      "finalPurchasePrice": {
+        "status": "Final purchase price not announced.",
+        "status_ar": "لم يتم الإعلان عن سعر الشراء النهائي.",
+        "amount": null,
+        "isVerified": false,
+        "historicalReference": "Tesla KSA portal specifies regional pre-order terms; vehicle retail price pending announcement."
+      },
+      "reservationDeposit": {
+        "amount": 187000,
+        "details": "SAR 18,700 card payment + SAR 168,300 wire transfer due within 10 days.",
+        "details_ar": "18,700 ر.س بالبطاقة الائتمانية + 168,300 ر.س تحويل بنكي خلال 10 أيام.",
+        "isVerified": true,
+        "sourceUrl": "https://www.tesla.com/en_sa/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      "estimatedExtraCosts": {
+        "title": "Saudi VAT (15%), Customs (5%) & Standards Compliance",
+        "title_ar": "ضريبة القيمة المضافة (15%) والجمارك (5%) ومطابقة المواصفات",
+        "vatRate": 0.15,
+        "customsDuty": 0.05,
+        "shippingEstimateSAR": 14000,
+        "registrationSAR": 2000
+      }
+    },
+    "exchangeRates": {
+      "status": "Fixed Pegged Assumptions (Official Currency Pegs to USD)",
+      "status_ar": "أسعار الصرف المعتمدة (الارتباط الرسمي بالدولار الأمريكي)",
+      "isLive": false,
+      "lastVerified": "2026-10-23",
+      "rates": {
+        "USD_AED": 3.6725,
+        "USD_SAR": 3.75,
+        "AED_SAR": 1.021
+      }
+    }
+  },
+  "faq": {
+    "lastVerified": "2026-10-23",
+    "sources": [
+      { "name": "Tesla Official US Roadster Portal", "url": "https://www.tesla.com/roadster" },
+      { "name": "Tesla Official UAE Roadster Portal", "url": "https://www.tesla.com/en_ae/roadster" },
+      { "name": "Tesla Official Saudi Arabia Roadster Portal", "url": "https://www.tesla.com/en_sa/roadster" },
+      { "name": "Tesla Investor Relations Releases", "url": "https://ir.tesla.com" }
+    ],
+    "questions": [
+      {
+        "id": 1,
+        "q_en": "When is Roadster production planned?",
+        "q_ar": "متى يُتوقع بدء إنتاج تيسلا رودستر؟",
+        "a_en": "Tesla has not established a legally binding or verified production date. Elon Musk has repeatedly discussed target dates ranging between late 2024 and 2026 in shareholder sessions and public interviews, but these are aspirations rather than confirmed factory timelines.",
+        "a_ar": "لم تحدد تيسلا تاريخاً رسمياً ملزماً لبدء الإنتاج. صرح إيلون ماسك بأهداف متوقعة بين أواخر 2024 وحتى 2026 في مقابلات واجتماعات المساهمين، لكنها تبقى أهدافاً تقديرية بانتظار التأكيد الرسمي.",
+        "status": "reported",
+        "sourceUrl": "https://ir.tesla.com",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 2,
+        "q_en": "What is the final price in the USA?",
+        "q_ar": "ما هو سعر الشراء النهائي في الولايات المتحدة؟",
+        "a_en": "Final purchase price not announced. When initially unveiled in 2017, Tesla suggested a $200,000 base and $250,000 Founders Series price, but all pricing figures were removed from Tesla's official website in 2021. Currently, only the $50,000 reservation deposit is specified.",
+        "a_ar": "لم يتم الإعلان عن سعر الشراء النهائي. عند الإعلان الأولي في 2017 قُدّر السعر بـ 200,000 دولار للطراز الأساسي و 250,000 دولار لطراز المؤسسين، ثم أزالت تيسلا كافة الأسعار من موقعها عام 2021. حالياً يتم تحديد عربون الحجز البالغ 50,000 دولار فقط.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 3,
+        "q_en": "What is the final price in the UAE?",
+        "q_ar": "ما هو سعر الشراء النهائي في الإمارات؟",
+        "a_en": "Final purchase price not announced. The official Tesla UAE portal accepts reservations with a total deposit of AED 183,000 (AED 18,300 card payment + AED 164,700 wire transfer), but the final retail MSRP remains unconfirmed.",
+        "a_ar": "لم يتم الإعلان عن سعر الشراء النهائي. يتيح موقع تيسلا الإمارات حجز السيارة بمبلغ إجمالي قدره 183,000 د.إ (18,300 بالبطاقة و 164,700 بتحويل بنكي)، مع بقاء سعر البيع النهائي غير معلن.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/en_ae/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 4,
+        "q_en": "What is the final price in Saudi Arabia?",
+        "q_ar": "ما هو سعر الشراء النهائي في المملكة العربية السعودية؟",
+        "a_en": "Final purchase price not announced. Tesla Saudi Arabia requires a reservation payment of SAR 187,000 (SAR 18,700 initial deposit + SAR 168,300 wire transfer within 10 days), with vehicle purchase pricing pending future publication.",
+        "a_ar": "لم يتم الإعلان عن سعر الشراء النهائي. يتطلب موقع تيسلا السعودية عربون حجز قدره 187,000 ر.س (18,700 ر.س دفعة أولية + 168,300 ر.س تحويل بنكي خلال 10 أيام)، في حين سيتم نشر السعر النهائي لاحقاً.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/en_sa/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 5,
+        "q_en": "What is the battery capacity?",
+        "q_ar": "ما هي سعة البطارية الرسمية؟",
+        "a_en": "Not announced. The 2017 concept prototype referenced a ~200 kWh pack to achieve a 620-mile range claim, but Tesla has not confirmed battery chemistry, module architecture, or capacity for the production vehicle.",
+        "a_ar": "لم تُعلن رسمياً. ذكر النموذج الأولي في 2017 حزمة بطارية بسعة تقارب 200 كيلوواط/ساعة للوصول لمدى 620 ميلاً، إلا أن تيسلا لم تؤكد مواصفات أو سعة بطارية الإنتاج التجاري حتى الآن.",
+        "status": "unconfirmed",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 6,
+        "q_en": "How long will the battery last?",
+        "q_ar": "كم سنة أو كيلومتر تدوم البطارية؟",
+        "a_en": "Not announced. Tesla has not published longevity metrics, degradation curves, or cell cycle ratings for the Roadster. Modern Tesla structural packs generally aim for 300,000 to 500,000 miles of structural life, but no Roadster-specific guarantee exists.",
+        "a_ar": "لم تُعلن رسمياً. لم تنشر تيسلا معدلات عمر افتراضي أو منحنيات تدهور خاصة برودستر. تهدف بطاريات تيسلا الحديثة إلى خدمة تتراوح بين 300 ألف و500 ألف ميل، لكن لا يوجد رقم معتمد مخصص لرودستر.",
+        "status": "unconfirmed",
+        "sourceUrl": "https://www.tesla.com/support",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 7,
+        "q_en": "What is the claimed driving range?",
+        "q_ar": "ما هو مدى القيادة المعلن عنه؟",
+        "a_en": "Tesla originally claimed a 620-mile (1,000 km) range during the 2017 prototype reveal. Official production EPA and WLTP certified figures have not yet been evaluated or published.",
+        "a_ar": "أعلنت تيسلا مبدئياً عن مدى يصل إلى 620 ميلاً (1,000 كم) أثناء الكشف عن النموذج الأولي في 2017. لم يتم بعد إجراء اختبارات الاعتماد الرسمية لمدى القيادة (EPA أو WLTP).",
+        "status": "reported",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 8,
+        "q_en": "How long will charging take?",
+        "q_ar": "كم من الوقت يستغرقه الشحن؟",
+        "a_en": "Not announced. While expected to charge on Tesla Supercharger V3 (250 kW) and V4 (350+ kW) stations, exact 10% to 80% recharge times have not been released.",
+        "a_ar": "لم يُعلن رسمياً. من المتوقع توافقها مع شواحن تيسلا الفائقة V3 و V4، لكن لم يتم إصدار منحنى الشحن أو الوقت الدقيق من 10% إلى 80%.",
+        "status": "unconfirmed",
+        "sourceUrl": "https://www.tesla.com/supercharger",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 9,
+        "q_en": "Can the Roadster really fly?",
+        "q_ar": "هل تستطيع سيارة تيسلا رودستر الطيران فعلاً؟",
+        "a_en": "No, the Roadster is not an aircraft and cannot fly. Elon Musk discussed an optional 'SpaceX package' utilizing ultra-high-pressure cold-gas thrusters to improve cornering, acceleration, braking, and potentially allow brief hops, but this is a simulated concept and does not constitute aviation flight.",
+        "a_ar": "لا، رودستر ليست طائرة ولا يمكنها التحليق كمركبة طيران. صرّح إيلون ماسك بإمكانية توفير 'باقة سبيس إكس' التي تستخدم نفاثات غاز مضغوط فائق القوة لتحسين التسارع والمناورة والقفز اللحظي، لكنه مفهوم تجريبي وليس طيراناً حقيقياً.",
+        "status": "reported",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 10,
+        "q_en": "Is the Rocket configuration approved for public roads?",
+        "q_ar": "هل تم اعتماد حزمة الدفع الصاروخي على الطرق العامة؟",
+        "a_en": "No. Road vehicle regulatory bodies (such as the US NHTSA, European UNECE, and GCC GSO) have neither reviewed nor approved high-pressure cold-gas thrust systems for street-legal passenger vehicles.",
+        "a_ar": "لا. لم تقم هيئات السلامة المرورية (مثل NHTSA الأمريكية وهيئة المواصفات والمقاييس الخليجية) بمراجعة أو اعتماد أنظمة دفع بالغاز المضغوط لسيارات الركاب على الطرق العامة.",
+        "status": "official",
+        "sourceUrl": "https://www.nhtsa.gov",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 11,
+        "q_en": "Which paint colours are officially available?",
+        "q_ar": "ما هي ألوان الطلاء المتاحة رسمياً؟",
+        "a_en": "Tesla has not released an official production colour palette for the Roadster. The 9 finishes available in this app's Paint Studio are customizer previews and fan-made conceptual visualizations.",
+        "a_ar": "لم تنشر تيسلا لوحة الألوان الرسمية المعتمدة لإنتاج رودستر. الألوان التسعة المعروضة في استوديو الطلاء بهذا التطبيق هي معاينات تجريبية توضيحية وليست ألوان مصنع مؤكدة.",
+        "status": "unconfirmed",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 12,
+        "q_en": "Can the doors open and wheels spin in the 3D viewer?",
+        "q_ar": "هل تفتح الأبواب وتدور العجلات في العارض ثلاثي الأبعاد؟",
+        "a_en": "Yes! The 3D Explorer features active wheel-spin rotation physics and a simulated open-chassis demonstration. In the supplied 3D model, wheels have independent rotation coordinates, while door geometry disclosure is clearly indicated.",
+        "a_ar": "نعم! يوفر العارض ثلاثي الأبعاد إمكانية تدوير العجلات ومحاكاة حركية تفاعلية. تدور العجلات حول محاورها، بينما يتم توضيح طبيعة تصميم الأبواب بالنموذج بكل شفافية.",
+        "status": "official",
+        "sourceUrl": "#viewer",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 13,
+        "q_en": "Are AED and SAR prices official?",
+        "q_ar": "هل أسعار الدرهم الإماراتي والريال السعودي رسمية؟",
+        "a_en": "The reservation deposits (AED 183,000 in UAE and SAR 187,000 in KSA) are official figures published on Tesla's regional websites. However, the final total purchase prices have not been published for any market.",
+        "a_ar": "مبالغ الحجز (183,000 درهم بالإمارات و 187,000 ريال بالسعودية) هي أرقام رسمية منشورة على مواقع تيسلا الإقليمية. ولكن سعر البيع الإجمالي النهائي لم يعلن في أي سوق حتى الآن.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/en_ae/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 14,
+        "q_en": "Where can users verify the latest information?",
+        "q_ar": "أين يمكن للمستخدمين التحقق من أحدث المعلومات الرسمية؟",
+        "a_en": "Users can verify directly at official Tesla domains: tesla.com/roadster (US), tesla.com/en_ae/roadster (UAE), tesla.com/en_sa/roadster (Saudi Arabia), and SEC corporate filings at ir.tesla.com.",
+        "a_ar": "يمكن للمستخدمين التحقق مباشرة من نطاقات تيسلا الرسمية: tesla.com/roadster (أمريكا)، tesla.com/en_ae/roadster (الإمارات)، tesla.com/en_sa/roadster (السعودية)، وتقارير المستثمرين على ir.tesla.com.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/roadster",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 15,
+        "q_en": "What is the difference between a reservation payment and the final purchase price?",
+        "q_ar": "ما الفرق بين دفعة الحجز وسعر الشراء النهائي؟",
+        "a_en": "A reservation deposit is a refundable or conditionally held pre-order payment that secures a manufacturing queue position. It is credited toward the vehicle purchase price once configured and ordered, but does not represent the full purchase cost.",
+        "a_ar": "دفعة الحجز هي مبلغ مالي مسبق يضمن أسبقية في طابور التصنيع، ويتم خصمه لاحقاً من السعر الإجمالي عند فتح باب تهيئة الطلب، ولا يمثل التكلفة الإجمالية لشراء المركبة.",
+        "status": "official",
+        "sourceUrl": "https://www.tesla.com/configurator/api/v4/terms",
+        "lastVerified": "2026-10-23"
+      },
+      {
+        "id": 16,
+        "q_en": "Can users replace the 3D model, photo, video, and sounds?",
+        "q_ar": "هل يمكن للمستخدمين استبدال النموذج ثلاثي الأبعاد والصور والفيديو والأصوات؟",
+        "a_en": "Yes! All media paths are centralized in src/data/roadsterData.json. Furthermore, the 3D Explorer includes a local file uploader allowing users to load and preview custom .glb or .gltf 3D models directly in real-time.",
+        "a_ar": "نعم! جميع مسارات الوسائط مركزية في ملف src/data/roadsterData.json. علاوة على ذلك، يحتوي مستكشف الأبعاد الثلاثية على ميزة رفع ملفات محلية لاختبار أي نموذج .glb أو .gltf مباشرة.",
+        "status": "official",
+        "sourceUrl": "#central-data",
+        "lastVerified": "2026-10-23"
+      }
+    ]
+  },
+  "specifications": [
+    {
+      "category": "Performance Claims (Tesla 2017 Concept)",
+      "category_ar": "أرقام الأداء المعلنة (مفهوم 2017)",
+      "items": [
+        { "spec": "Acceleration 0-60 mph", "spec_ar": "التسارع 0-100 كم/س (0-60 ميل)", "value": "1.9 sec (base) / <1 sec (SpaceX package claimed)", "status": "claimed", "source": "Tesla 2017 Presentation / Elon Musk tweet", "verified": false },
+        { "spec": "Top Speed", "spec_ar": "السرعة القصوى", "value": ">250 mph (>402 km/h)", "status": "claimed", "source": "Tesla Unveil Keynote", "verified": false },
+        { "spec": "Quarter Mile (1/4 mi)", "spec_ar": "سباق الربع ميل", "value": "8.8 seconds", "status": "claimed", "source": "Tesla Official Website (2017)", "verified": false },
+        { "spec": "Wheel Torque", "spec_ar": "عزم الدوران عند العجلات", "value": "10,000 Nm", "status": "claimed", "source": "Tesla Spec Sheet (Wheel torque multiplication)", "verified": false }
+      ]
+    },
+    {
+      "category": "Powertrain & Architecture",
+      "category_ar": "المحركات والهندسة الميكانيكية",
+      "items": [
+        { "spec": "Drive Layout", "spec_ar": "نظام الدفع", "value": "All-Wheel Drive (Tri-Motor: 1 Front, 2 Rear)", "status": "official", "source": "Tesla Roadster Product Page", "verified": true },
+        { "spec": "Seating Capacity", "spec_ar": "عدد المقاعد", "value": "4 Seater (2+2 configuration)", "status": "official", "source": "Tesla Official Specs", "verified": true },
+        { "spec": "Roof Style", "spec_ar": "نوع السقف", "value": "Lightweight, removable Glass Targa Roof", "status": "official", "source": "Tesla Official Specs", "verified": true },
+        { "spec": "Production Location", "spec_ar": "مقر التصنيع المستهدف", "value": "Unannounced (Potential Giga Texas or Fremont pilot line)", "status": "unconfirmed", "source": "Industry Analysis", "verified": false }
+      ]
+    },
+    {
+      "category": "SpaceX Cold-Gas Thruster Concept",
+      "category_ar": "مفهوم نفاثات سبيس إكس بالغاز البارد",
+      "items": [
+        { "spec": "Thruster System", "spec_ar": "نظام الدفع الصاروخي", "value": "Composite Overwrapped Pressure Vessels (COPV) compressed air", "status": "reported", "source": "Elon Musk Public Interviews", "verified": false },
+        { "spec": "Nozzle Placement", "spec_ar": "موقع الفوهات", "value": "Hidden behind license plate and lateral body cavities", "status": "reported", "source": "Petersen Automotive Museum Display", "verified": false },
+        { "spec": "Aviation / Flight Legality", "spec_ar": "المشروعية القانونية للطيران", "value": "Not street-legal certified as an aircraft or hovercraft", "status": "official", "source": "Federal Aviation Regulations / NHTSA", "verified": true }
+      ]
+    }
+  ]
+}
